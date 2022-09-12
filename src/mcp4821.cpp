@@ -1,7 +1,6 @@
 #include <iostream>
 #include "mcp4821.h"
 
-
 MCP4821::MCP4821()
 {
     _ss = 5;
