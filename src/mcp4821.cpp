@@ -12,7 +12,7 @@ MCP4821::~MCP4821()
 
 void MCP4821::begin()
 {
-    spi_init(spi0, 1000 * 1000);          // Baudrate 1MHz
+    spi_init(spi0, 1000 * 1000);         // Baudrate 1MHz
     gpio_set_function(2, GPIO_FUNC_SPI); // SCK
     gpio_set_function(3, GPIO_FUNC_SPI); //
     gpio_set_function(4, GPIO_FUNC_SPI);
@@ -25,7 +25,7 @@ void MCP4821::begin()
 
 void MCP4821::begin(const ulong BAUDRATE)
 {
-    spi_init(spi0, BAUDRATE);    // Baudrate 20MHz
+    spi_init(spi0, BAUDRATE);            // Baudrate 20MHz
     gpio_set_function(2, GPIO_FUNC_SPI); // SCK
     gpio_set_function(3, GPIO_FUNC_SPI); //
     gpio_set_function(4, GPIO_FUNC_SPI);
@@ -69,15 +69,14 @@ void MCP4821::set_gain(uint8_t gain_value)
 {
     if (gain_value == 0)
     {
-        //gain_shdown &= 0x10;
+        // gain_shdown &= 0x10;
         gain = 0x10;
     }
     else
     {
-        //gain_shdown |= 0x20;
+        // gain_shdown |= 0x20;
         gain = 0x30;
     }
-    
 }
 
 uint8_t MCP4821::get_gain(void)
