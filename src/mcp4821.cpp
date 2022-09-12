@@ -13,7 +13,7 @@ MCP4821::~MCP4821()
 
 void MCP4821::begin()
 {
-    spi_init(spi0, 100 * 1000);          // Baudrate 100k
+    spi_init(spi0, 20 * 1000 * 1000);          // Baudrate 20MHz
     gpio_set_function(2, GPIO_FUNC_SPI); // SCK
     gpio_set_function(3, GPIO_FUNC_SPI); //
     gpio_set_function(4, GPIO_FUNC_SPI);
