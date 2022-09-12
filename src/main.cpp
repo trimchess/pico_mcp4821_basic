@@ -10,6 +10,7 @@ int main(void)
 {
     stdio_init_all();
     const int FACTOR = 128;
+    const ulong BAUD = 20 * 1000 * 1000;
     int sin_array[FACTOR];
     for (int i = 0; i < FACTOR; i++)
     {
@@ -17,7 +18,7 @@ int main(void)
     }
 
     MCP4821 adc;
-    adc.begin();
+    adc.begin(BAUD);
     while (1)
     {
         for (int i = 0; i < FACTOR; i++)

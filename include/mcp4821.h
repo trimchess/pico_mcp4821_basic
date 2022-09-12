@@ -33,7 +33,8 @@ public:
     ~MCP4821();
 
     void begin();
-    void begin(const uint8_t SPIID, const uint8_t clk, const uint8_t mosi, const uint8_t cs, const uint8_t gain, const ulong BAUDRATE = 100000);
+    void begin(const ulong BAUDRATE);
+    void begin(const uint8_t SPIID, const uint8_t clk, const uint8_t mosi, const uint8_t cs, const uint8_t gain, const ulong BAUDRATE = 1000000);
     void writeDAC_value(int value);
     void set_gain(uint8_t gain);
     uint8_t get_gain(void);
